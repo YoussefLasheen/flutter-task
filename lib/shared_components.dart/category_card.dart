@@ -13,7 +13,7 @@ class CategoryCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
             image: NetworkImage(category.image),
-            colorFilter: const ColorFilter.mode(Colors.red, BlendMode.modulate),
+            colorFilter: ColorFilter.mode(Colors.pink.shade500.withOpacity(0.5), BlendMode.hardLight),
             fit: BoxFit.cover,
           ),
         ),
