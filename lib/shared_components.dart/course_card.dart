@@ -14,11 +14,22 @@ class CourseCard extends StatelessWidget {
       shadowColor: Colors.black12,
       child: Column(
         children: [
-          const Expanded(
+          Expanded(
             flex: 2,
-            child: Placeholder(),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
+              child: SizedBox.expand(
+                child: ClipRRect(
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(5)),
+                  child: Image.network(
+                      'https://i.postimg.cc/QMBCjGMz/Teaching-Online-Marketing-1170x471.webp',
+                      fit: BoxFit.cover),
+                ),
+              ),
+            ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
           Expanded(
