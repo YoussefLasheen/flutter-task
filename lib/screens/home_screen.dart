@@ -6,6 +6,7 @@ import 'package:flutter_task/services/api_service.dart';
 import 'package:flutter_task/shared_components.dart/category_card.dart';
 import 'package:flutter_task/shared_components.dart/course_card.dart';
 import 'package:flutter_task/shared_components.dart/search_button.dart';
+import 'package:flutter_task/shared_components.dart/title_bar.dart';
 import 'package:flutter_task/shared_components.dart/tutor_avatar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -47,6 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 .map((i) => TutorModel.fromJson(i))
                 .toList();
 
+            int totalCourses = data['popular_courses']['total'];
+            int totalCategories = data['categoies']['total'];
+            int totalTutors = data['tutors']['total'];
+
             return Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 35,
@@ -61,11 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    'Popular Courses',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.start,
-                  ),
+                  TitleBar(
+                      title: 'Popular Courses', totalCourses: totalCourses),
                   const SizedBox(
                     height: 20,
                   ),
@@ -92,11 +94,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    'Category',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.start,
-                  ),
+                  TitleBar(
+                      title: 'Category', totalCourses: totalCategories),
                   const SizedBox(
                     height: 20,
                   ),
@@ -120,11 +119,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(
                     height: 25,
                   ),
-                  const Text(
-                    'Top Tutors',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.start,
-                  ),
+                  TitleBar(
+                      title: 'Top Tutors', totalCourses: totalTutors),
                   const SizedBox(
                     height: 15,
                   ),
