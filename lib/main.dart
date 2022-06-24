@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Task',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Schyler'
       ),
       home: Root(),
     );
