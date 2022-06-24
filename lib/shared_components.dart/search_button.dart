@@ -10,7 +10,9 @@ class SearchButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: () {},
         style: TextButton.styleFrom(
-          backgroundColor: Colors.white.withOpacity(0.05),
+          backgroundColor: Colors.white,
+          elevation: 10,
+          shadowColor: Colors.black12,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.0),
             side: BorderSide.none,
