@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemCount: popularCourses.length,
                     itemBuilder: (BuildContext context, int index) {
                       return SizedBox(
-                        width: 300,
+                        width: 350,
                         height: 50,
                         child: Padding(
                           padding: index == 0
