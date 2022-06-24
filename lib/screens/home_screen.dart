@@ -52,100 +52,101 @@ class _HomeScreenState extends State<HomeScreen> {
             int totalCategories = data['categoies']['total'];
             int totalTutors = data['tutors']['total'];
 
-            return Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 35,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const SearchButton(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  TitleBar(
-                      title: 'Popular Courses', totalCourses: totalCourses),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                    height: 250,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: popularCourses.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return SizedBox(
-                          width: 300,
-                          height: 50,
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 8.0),
-                            child: CourseCard(
-                              course: popularCourses[index],
-                              isBestSeller: index == 0 ? true : false,
-                            ),
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 30,
+                ),
+                const SearchButton(),
+                const SizedBox(
+                  height: 20,
+                ),
+                TitleBar(
+                    title: 'Popular Courses', totalCourses: totalCourses),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  height: 250,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: popularCourses.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return SizedBox(
+                        width: 300,
+                        height: 50,
+                        child: Padding(
+                          padding: index == 0
+                              ? const EdgeInsets.only(right: 8.0, left: 35)
+                              : const EdgeInsets.only(right: 8.0),
+                          child: CourseCard(
+                            course: popularCourses[index],
+                            isBestSeller: index == 0 ? true : false,
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      );
+                    },
                   ),
-                  const SizedBox(
-                    height: 20,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TitleBar(
+                    title: 'Category', totalCourses: totalCategories),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  height: 100,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: categories.length,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: index == 0
+                              ? const EdgeInsets.only(right: 18.0, left: 35)
+                              : const EdgeInsets.only(right: 18.0),
+                        child: SizedBox.square(
+                          dimension: 100,
+                          child: CategoryCard(category: categories[index]),
+                        ),
+                      );
+                    },
                   ),
-                  TitleBar(
-                      title: 'Category', totalCourses: totalCategories),
-                  const SizedBox(
-                    height: 20,
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                TitleBar(
+                    title: 'Top Tutors', totalCourses: totalTutors),
+                const SizedBox(
+                  height: 15,
+                ),
+                SizedBox(
+                  height: 50,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: categories.length,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: index == 0
+                              ? const EdgeInsets.only(right: 18.0, left: 35)
+                              : const EdgeInsets.only(right: 18.0),
+                        child: SizedBox.square(
+                          dimension: 45,
+                          child: TutorAvatar(tutor: tutors[index]),
+                        ),
+                      );
+                    },
                   ),
-                  SizedBox(
-                    height: 100,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: categories.length,
-                      shrinkWrap: true,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 18 + .0),
-                          child: SizedBox.square(
-                            dimension: 100,
-                            child: CategoryCard(category: categories[index]),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  TitleBar(
-                      title: 'Top Tutors', totalCourses: totalTutors),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  SizedBox(
-                    height: 50,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: categories.length,
-                      shrinkWrap: true,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 18 + .0),
-                          child: SizedBox.square(
-                            dimension: 50,
-                            child: TutorAvatar(tutor: tutors[index]),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                ],
-              ),
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+              ],
             );
           }
           return const Center(

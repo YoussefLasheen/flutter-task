@@ -12,26 +12,31 @@ class TitleBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 35,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2,
+            ),
+            textAlign: TextAlign.start,
           ),
-          textAlign: TextAlign.start,
-        ),
-        TextButton(
-          child: Text(
-            'See all ($totalCourses)',
-            style: const TextStyle(color: Colors.grey, fontSize: 12),
-          ),
-          onPressed: () {},
-        )
-      ],
+          TextButton(
+            child: Text(
+              'See all ($totalCourses)',
+              style: const TextStyle(color: Colors.grey, fontSize: 12),
+            ),
+            onPressed: () {},
+          )
+        ],
+      ),
     );
   }
 }

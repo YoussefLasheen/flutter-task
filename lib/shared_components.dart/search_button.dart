@@ -5,39 +5,42 @@ class SearchButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () {},
-      style: TextButton.styleFrom(
-        backgroundColor: Colors.white.withOpacity(0.05),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5.0),
-          side: BorderSide.none,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 35),
+      child: OutlinedButton(
+        onPressed: () {},
+        style: TextButton.styleFrom(
+          backgroundColor: Colors.white.withOpacity(0.05),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5.0),
+            side: BorderSide.none,
+          ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: SizedBox(
-          height: 30,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
-              Icon(
-                Icons.search,
-                color: Colors.black26,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text(
-                  'Find Course',
-                  style: TextStyle(color: Colors.black26),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            height: 30,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                Icon(
+                  Icons.search,
+                  color: Colors.black26,
                 ),
-              ),
-              Spacer(),
-              Icon(
-                Icons.settings_input_composite_sharp,
-                color: Colors.black26,
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 5),
+                  child: Text(
+                    'Find Course',
+                    style: TextStyle(color: Colors.black26),
+                  ),
+                ),
+                Spacer(),
+                Icon(
+                  Icons.settings_input_composite_sharp,
+                  color: Colors.black26,
+                )
+              ],
+            ),
           ),
         ),
       ),
