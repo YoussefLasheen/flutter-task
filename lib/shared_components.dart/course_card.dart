@@ -45,7 +45,7 @@ class CourseCard extends StatelessWidget {
                       Text(
                         course.title,
                         textAlign: TextAlign.start,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15,
                         ),
@@ -54,7 +54,8 @@ class CourseCard extends StatelessWidget {
                       Text(
                         "By ${course.author}",
                         textAlign: TextAlign.start,
-                        style: TextStyle(color: Colors.grey, fontSize: 10),
+                        style:
+                            const TextStyle(color: Colors.grey, fontSize: 10),
                       ),
                     ],
                   ),
@@ -67,21 +68,21 @@ class CourseCard extends StatelessWidget {
                       isBestSeller
                           ? Container(
                               decoration: BoxDecoration(
-                                color: Color(0xFFee6a61),
+                                color: const Color(0xFFee6a61),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: const Text(
+                              child: const Padding(
+                                padding: EdgeInsets.all(5.0),
+                                child: Text(
                                   "Bestseller",
                                   style: TextStyle(
                                       fontSize: 9, color: Colors.white),
                                 ),
                               ),
                             )
-                          : SizedBox.shrink(),
+                          : const SizedBox.shrink(),
                       Text(course.fees.currencySymbol + course.fees.value,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 15))
                     ],
                   ),
@@ -97,16 +98,17 @@ class CourseCard extends StatelessWidget {
                           color: Colors.yellow,
                           size: 12,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 1,
                         ),
                         Text(course.rating.avgRating,
-                            style: TextStyle(color: Colors.grey, fontSize: 10)),
-                        SizedBox(
+                            style: const TextStyle(
+                                color: Colors.grey, fontSize: 10)),
+                        const SizedBox(
                           width: 5,
                         ),
-                        Text('(' + course.rating.totalGivenBy + ')',
-                            style: TextStyle(fontSize: 12)),
+                        Text('(${course.rating.totalGivenBy})',
+                            style: const TextStyle(fontSize: 12)),
                       ],
                     ),
                   ),
